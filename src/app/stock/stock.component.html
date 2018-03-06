@@ -1,0 +1,46 @@
+<div class="jumbotron text-center">
+  <h2>product Stocks</h2>
+
+</div>
+
+<div class="container">
+  <form method="POST" name="form" #form="ngForm" novalidate (ngSubmit)="onSubmitQuandS()">
+    <div class="row">
+    <div class="form-group col-sm-6">
+      <label class="control-label" for="email">Product :</label>
+      <br>
+      <input type="text" [(ngModel)]="model.items" name="items" class="form-control" #items="ngModel">
+    </div>
+    <div class="form-group col-sm-6">
+      <label class="control-label" for="itemsNos">items Nos:</label>
+      <br>
+      <input type="number" class="form-control" [(ngModel)]="model.itemsNos" name="itemsNos" rows="5" #itemsNos="ngModel">
+    </div>
+    </div>
+    <div class="col-md-4 text-center">
+    <button type="submit" type="submit" [disabled]="!form.valid" data-toggle="model" data-target="#myModal" class="btn btn-default btn-sucess">Submit</button>
+  </div>
+  </form>
+
+
+</div>
+
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Product Nos</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Qandsarry of Qandsarrys">
+        <td>{{Qandsarry.items}}</td>
+        <td>{{Qandsarry.itemsNos}}</td>
+        <td><button (click)="onupdateQandS(Qandsarry);">Edit</button> <button (click)="ondeleteQandS(Qandsarry);">Delete</button> </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

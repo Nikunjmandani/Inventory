@@ -1,0 +1,24 @@
+<input id="menu-trigger" type="checkbox">
+<label for="menu-trigger">MENU</label>
+
+<header>
+	<ul class="menu">
+		<!--  
+		<li>
+			<a [routerLink]="['login']">Login</a>
+		</li>
+		<li>
+			<a [routerLink]="['dashboard']">Dashboard</a>
+		</li>-->
+		<li>
+			<a [routerLink]="['stock']">Stocks</a>
+		</li>
+		<li>
+			<a [routerLink]="['placeorder']">Place Order</a>
+		</li>
+	</ul>
+</header>
+
+<div class="container" id="content">
+	<router-outlet></router-outlet>
+</div>
